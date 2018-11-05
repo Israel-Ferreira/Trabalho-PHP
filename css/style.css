@@ -1,0 +1,41 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    font-family: sans-serif;
+    background-image: url('https://blog.emania.com.br/content/uploads/2015/10/thumb-04.jpg');
+    background-size: cover;
+}
+
+
+
+header{
+    height: 60px;
+    font-size: 24px;
+}
+
+
+.bg-transparent {
+    background-color: transparent;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    color:  #FFF;
+    height: 500px;
+}
+
+.text-image{
+    align-self: center;
+}
+
+.buttons{
+    text-align: center;
+}
+
