@@ -1,41 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
+html,body{
+  height: 100%;
+  width: 100%;
+}
+
+
+/* http://hiltonmorumbi.com.br/images/show3_3.jpg */
+/* https://blog.emania.com.br/content/uploads/2015/10/thumb-04.jpg */
 body{
-    height: 100%;
-    width: 100%;
-    font-family: sans-serif;
-    background-image: url('https://blog.emania.com.br/content/uploads/2015/10/thumb-04.jpg');
-    background-size: cover;
+  font-family: 'Montserrat', sans-serif;
 }
 
+.home-page{
+  background-image: url('http://hiltonmorumbi.com.br/images/show3_3.jpg ');
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden; 
+}
 
 
 header{
-    height: 60px;
-    font-size: 24px;
+  height: 60px;
+  font-size: 24px;
 }
 
 
 .bg-transparent {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 main {
-    display: flex;
-    justify-content: center;
-    color:  #FFF;
-    height: 500px;
+  display: flex;
+  justify-content: center;
+  color:  #FFF;
+  height: 95%;
 }
 
 .text-image{
-    align-self: center;
+  align-self: center;
 }
 
 .buttons{
-    text-align: center;
+  text-align: center;
 }
 
+
+
+
+@media only screen and (max-width: 768px){
+  
+  h2{
+    font-size: 23px;
+  }
+}
