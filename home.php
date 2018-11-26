@@ -9,6 +9,16 @@
   <title>Perfil </title>
 </head>
 <body>
+  <?php
+  session_start();
+  if((!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['senha']) == true))
+  {
+    unset($_SESSION['email']);
+    unset($_SESSION['senha']);
+  }
+  
+  $logado = $_SESSION['email'];
+  ?>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">PHP Music</a>
