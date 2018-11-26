@@ -6,11 +6,16 @@ const checkarValores = campos => {
     return campos.every(campo => $(campo).value !== "");
 }
 
-$('#login-button').on('submit',(e) => {
+$('#loginForm').on('submit', e => {
     let campos =  ['#signUpName',"#signUpEmail",'#signUpCPF','#signUpPassword']
     if(!checkarValores(campos)){
-        event.preventDefault()
+        e.preventDefault()
     } 
 });
 
-$("#si")
+$("#signUpForm").on('submit', e => {
+    let campos = ["#loginEmail","#loginPassword"];
+    if(!checkarValores(campos)){
+        e.preventDefault();
+    }
+})

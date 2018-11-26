@@ -40,7 +40,24 @@
       </div>   
     </nav>
   </header>
-  <div class="container"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="container">
+          <div class="card">
+            <img src="" alt="" class="card-img-top">
+            <div class="card-title">
+              <h5 class="card-title"></h5>
+              <p class="card-title"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="container jumbotron"></div>
+      </div>
+    </div>
+  </div>
 
 </body>
 <footer>
