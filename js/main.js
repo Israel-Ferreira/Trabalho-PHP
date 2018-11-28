@@ -8,7 +8,7 @@ const checkarValores = campos => {
 }
 
 $('#loginForm').on('submit', e => {
-    let campos =  ['#signUpName',"#signUpEmail",'#signUpCPF','#signUpPassword']
+    let campos =  ['#signUpName',"#signUpEmail",'#signUpCPF','#signUpPassword',"#signUpBirthDate",""]
     if(!checkarValores(campos)){
         e.preventDefault()
     } 
