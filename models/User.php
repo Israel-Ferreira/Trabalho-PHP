@@ -1,5 +1,5 @@
 <?php
-class Usuarios{
+class User{
 
     public $nome;
 	public $senha;
@@ -14,16 +14,13 @@ class Usuarios{
 
 
 
-	function __construct($nome,$sobrenome,$senha,$email,$telefone,$estilo_mus,$data_de_nascimento,$tempo_exp,$cpf,$sexo){
+	function __construct($nome,$senha,$email,$data_de_nascimento,$cpf,$sexo){
 		$this->nome = $nome;
 		$this->senha = $senha;
         $this->email = $email;
         $this->sexo = $sexo;
         $this->cpf = $cpf;
-		$this->telefone = $telefone;
-        $this->estilo_mus = $estilo_mus;
         $this->data_de_nascimento = $data_de_nascimento;
-        $this->tempo_exp = $tempo_exp;
     }
 }
 ?>
