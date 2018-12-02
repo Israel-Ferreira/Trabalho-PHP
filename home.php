@@ -57,7 +57,7 @@
           <div class="card">
             <img src="" alt="" class="card-img-top">
             <div class="card-title">
-              <h5 class="card-title"></h5>
+              <h5 class="card-title"><?php echo $logado ?></h5>
               <p class="card-title"></p>
             </div>
           </div>

@@ -52,7 +52,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="#" method="POST" id="loginForm">
+                    <form action="login.php" method="POST" id="loginForm">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email" class="form-control" name="email" id="loginEmail"
@@ -82,10 +82,10 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="#" method="POST" id="signUpForm">
+                    <form action="signup.php" method="POST" id="signUpForm">
                         <div class="form-group">
                             <label for="signUpName">Nome: </label>
-                            <input type="text" name="" class="form-control" id="signUpName" name="nome" placeholder="Digite o seu nome aqui">
+                            <input type="text" name="nome" class="form-control" id="signUpName" name="nome" placeholder="Digite o seu nome aqui">
                         </div>
                         <div class="form-group">
                             <label for="signUpEmail">Email: </label>
@@ -100,8 +100,19 @@
                             <input type="password" class="form-control" name="senha" id="signUpPassword" placeholder="Senha">
                         </div>
                         <div class="form-group">
-                            <label for="">Data de Nascimento: </label>
+                            <label for="signUpBirthDate">Data de Nascimento: </label>
                             <input type="text" class="form-control" name="birth-date" id="signUpBirthDate" placeholder="Data de Nascimento">
+                        </div>
+                        <div class="form-group">
+                            <p>Sexo</p>
+                            <div class="form-check">
+                                <input type="radio" name="sexo"  value="Masculino" id="signUpSex1" class="form-check-input">
+                                <label for="signUpSex1" class="form-check-label">Masculino</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" name="sexo" id="signUpSex2"  value="Feminino" class="form-check-input">
+                                <label for="signUpSex2" class="form-check-label">Feminino</label>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="select-espec">Qual é a sua função no meio musical ?</label>
