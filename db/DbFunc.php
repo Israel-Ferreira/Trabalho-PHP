@@ -11,13 +11,18 @@ class DbFunc {
         return mysqli_query($conn,$query);
     }
 
-    public static function verifica_usuario($tabela,$email){
+    public static function verifica_usuario($conn, $tabela,$email){
         $query =  "SELECT * FROM $tabela WHERE user_Email='$email'";
         $result = mysqli_query($this->conn,$query);
         $array = mysqli_fetch_array($result);
 
         $logemail =  $array['user_Email'];
         return $email === $logemail;
+    }
+
+    public static function deletar_usuario($conn,$tabela,$cpf){
+        $query  = "DELETE FROM $tabela WHERE cpf=$cpf";
+        return mysqli_query($conn,$query);
     }
 }
 
