@@ -14,12 +14,10 @@ if(verifica_campo('email') && verifica_campo('senha')){
     header('Location:index.html');
 }
 
-echo "<script>alert($email);</script>";
-
-
 
 $resultados =  DbFunc::procurar_usuario("cantor",$email,$senha,$conexao);
-if(mysqli_num_rows($resultados) <= 0 && mysqli_num_rows($resultados) > 1){
+
+if(mysqli_num_rows($resultados) <= 0){
     header("Location:index.html");
 }else{
     $_SESSION['email'] = $email;

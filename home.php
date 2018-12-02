@@ -44,7 +44,7 @@
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <div class="buttons">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            <button type="submit" class="btn btn-outline-danger my-2 my-sm-0 ">Sair</button>
+            <a  href="logout.php" class="btn btn-outline-danger my-2 my-sm-0 ">Sair</a>
           </div>
         </form>
       </div>   

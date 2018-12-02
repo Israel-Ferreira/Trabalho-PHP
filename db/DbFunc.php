@@ -2,7 +2,7 @@
 class DbFunc {
 
     public static function procurar_usuario($tabela,$email,$senha,$conn){
-        $query = "SELECT user_Email,senha FROM $tabela WHERE user_Email = '$email' AND senha = '$senha_codificada'";
+        $query = "SELECT * FROM $tabela WHERE user_Email = '$email' AND senha = '$senha'";
         return mysqli_query($conn,$query);
     }
 
@@ -12,7 +12,7 @@ class DbFunc {
     }
 
     public static function verifica_usuario($tabela,$email){
-        $query =  "SELECT user_Email FROM $tabela WHERE user_Email='$email'";
+        $query =  "SELECT * FROM $tabela WHERE user_Email='$email'";
         $result = mysqli_query($this->conn,$query);
         $array = mysqli_fetch_array($result);
 
