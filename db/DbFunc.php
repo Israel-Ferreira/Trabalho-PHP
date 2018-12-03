@@ -1,6 +1,11 @@
 <?php
 class DbFunc {
 
+    public static function pegar_todos($tabela,$conn){
+        $query = "SELECT * FROM $tabela";
+        return mysqli_query($conn,$query);
+    }
+
     public static function procurar_usuario($tabela,$email,$senha,$conn){
         $query = "SELECT * FROM $tabela WHERE user_Email = '$email' AND senha = '$senha'";
         return mysqli_query($conn,$query);

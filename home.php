@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" >
   <link rel="stylesheet" href="css/style.css">
   <title>Perfil </title>
 </head>
@@ -47,9 +47,9 @@
   </header>
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-xs-4">
-        <div class="jumbotron">
-          <h1 class="display-5"><?php echo $logado; ?></h1>
+      <div class="col-md-4 col-xs-12">
+        <div class="container jumbotron ">
+          <h3 class="text-center"><?php echo $logado; ?></h3>
           <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
         </div>
       </div>

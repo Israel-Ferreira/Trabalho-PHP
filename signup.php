@@ -6,8 +6,6 @@ require_once "models/User.php";
 
 
 
-echo "<script>alert('Está conectado com o banco')</script>";
-
 if (isset($_POST['nome'])){
     $nome = $_POST["nome"];
     $email = $_POST["email"];
@@ -24,18 +22,27 @@ $usuario = new User($nome,$senha,$email,$data_de_nascimento,$cpf,$sexo,$funcao);
 $inseriu = "";
 if($funcao === "Vocalista"){
     $inseriu = DbFunc::criar_usuario('cantor',$usuario,$conexao);
+    criar_sessao($inseriu);
 }else if($funcao === "Musico"){
-    $inseriu = DbFunc::criar_usuario("musico",$usuario,$conexao);
+    echo "$funcao";
+    $inseriu = DbFunc::criar_usuario('musico',$usuario,$conexao);
+    criar_sessao($inseriu_mus);
+    
 }
 
 
-if($inseriu){
-    echo "Cadastro Realizado com Sucesso";
-    $_SESSION['email'] = $email;
-    $_SESSION['senha'] = $senha;
-    echo "<script>alert('Cadastro realizado com sucesso')</script>";
-    setcookie('login',$email);
-    mysqli_close($conexao);
+
+function criar_sessao($inseriu){
+    if ($inseriu) {
+        echo "Cadastro Realizado com Sucesso";
+        $_SESSION['email'] = $email;
+        $_SESSION['senha'] = $senha;
+        echo "<script>alert('Cadastro realizado com sucesso')</script>";
+        setcookie('login', $email);
+        mysqli_close($conexao);
+        header("Location:home.php");
+    }
 }
+
 
 ?>
