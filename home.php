@@ -5,17 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="css/style.css">
   <title>Perfil </title>
 </head>
 <body>
   <?php
-  session_start();
-  if((!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['senha']) == true))
-  {
-    unset($_SESSION['email']);
-    unset($_SESSION['senha']);
-  }
+  require_once 'helpers/init_session.php';
   
   $logado = $_SESSION['email'];
   ?>
@@ -40,7 +35,7 @@
             <a href="#" class="nav-link">Configurações</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-1">
+        <form class="form-inline my-2 my-lg-1" action="search.php" method="POST">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <div class="buttons">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -52,20 +47,19 @@
   </header>
   <div class="container">
     <div class="row">
-      <div class="col">
-        <div class="container">
-          <div class="card">
-            <img src="" alt="" class="card-img-top">
-            <div class="card-title">
-              <h5 class="card-title"><?php echo $logado ?></h5>
-              <p class="card-title"></p>
-            </div>
-          </div>
+      <div class="col-md-8 col-xs-4">
+        <div class="jumbotron">
+          <h1 class="display-5"><?php echo $logado; ?></h1>
+          <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
         </div>
       </div>
+    </div>
+    <div class="row">
       <div class="col">
-        <div class="container jumbotron"></div>
+        1 Of 3
       </div>
+      <div class="col">2 Of 3</div>
+      <div class="col">3 Of 3</div>
     </div>
   </div>
 

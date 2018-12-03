@@ -3,7 +3,7 @@ session_start();
 require_once "db/Db_Conn.php";
 require_once "db/DbFunc.php";
 require_once "models/User.php";
-//$conn =  mysqli_connect("localhost","root","","linkedin_musical") or die("Falha ao Conectar com o banco de dados");
+
 
 
 echo "<script>alert('Está conectado com o banco')</script>";
@@ -16,12 +16,18 @@ if (isset($_POST['nome'])){
     $sexo = $_POST["sexo"];
     $data_de_nascimento = $_POST["birthdate"];
     $funcao = $_POST["funcao"];
-    echo "<script>alert('Entrou aqui')</script>";
 }
 
 
 $usuario = new User($nome,$senha,$email,$data_de_nascimento,$cpf,$sexo,$funcao);
-$inseriu =  DbFunc::criar_usuario('cantor',$usuario,$conexao);
+
+$inseriu = "";
+if($funcao === "Vocalista"){
+    $inseriu = DbFunc::criar_usuario('cantor',$usuario,$conexao);
+}else if($funcao === "Musico"){
+    $inseriu = DbFunc::criar_usuario("musico",$usuario,$conexao);
+}
+
 
 if($inseriu){
     echo "Cadastro Realizado com Sucesso";

@@ -11,19 +11,21 @@ class DbFunc {
         return mysqli_query($conn,$query);
     }
 
-    public static function verifica_usuario($conn, $tabela,$email){
-        $query =  "SELECT * FROM $tabela WHERE user_Email='$email'";
-        $result = mysqli_query($this->conn,$query);
-        $array = mysqli_fetch_array($result);
-
-        $logemail =  $array['user_Email'];
-        return $email === $logemail;
-    }
-
     public static function deletar_usuario($conn,$tabela,$cpf){
         $query  = "DELETE FROM $tabela WHERE cpf=$cpf";
         return mysqli_query($conn,$query);
     }
+
+    public static function informacoes_cpf($conn,$tabela,$cpf){
+        $query = "SELECT * FROM $tabela WHERE user_CPF='$cpf'";
+        return mysqli_query($conn,$query);
+    }
+
+    public static function achar_usuario($conn,$tabela,$nome){
+        $query = "SELECT * FROM $tabela WHERE user_nome='$nome'";
+        return mysqli_query($conn,$query);
+    }
+
 }
 
 ?>
