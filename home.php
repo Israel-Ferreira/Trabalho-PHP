@@ -10,9 +10,28 @@
 </head>
 <body>
   <?php
+  require_once 'db/Db_Conn.php';
   require_once 'helpers/init_session.php';
+  require_once 'db/DbFunc.php';
   
-  $logado = $_SESSION['email'];
+  $email = $_SESSION['email'];
+  $senha = $_SESSION['senha'];
+
+  $resultado_sing = DbFunc::procurar_usuario('cantor',$email,$senha,$conexao);
+  $resultado_mus = DbFunc::procurar_usuario('musico',$email,$senha,$conexao);
+
+  $cpf = "";
+  $tabela = "";
+  if(mysqli_num_rows($resultado_mus) > 0){
+    $resultado_mus = mysqli_fetch_array($resultado_mus);
+    $tabela = "musico";
+    $cpf = $resultado_mus['user_CPF'];
+  }else if(mysqli_num_rows($resultado_sing) > 0){
+    $resultado_sing = mysqli_fetch_array($resultado_sing);
+    $tabela = "cantor";
+    $cpf = $resultado_sing['user_CPF'];
+  }
+
   ?>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -47,19 +66,14 @@
   </header>
   <div class="container">
     <div class="row">
-      <div class="col-md-4 col-xs-12">
+      <div class="col-md-12 col-xs-12">
         <div class="container jumbotron ">
-          <h3 class="text-center"><?php echo $logado; ?></h3>
+          <h3 class="text-center"><?php echo $email; ?></h3>
           <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+          <hr class="my-4">
+          <a class="btn btn-primary btn-lg" href="alterar_usuario.php?cpf=<?php echo $cpf; ?>&funcao=<?php  echo $tabela; ?>" role="button">Alterar</a>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        1 Of 3
-      </div>
-      <div class="col">2 Of 3</div>
-      <div class="col">3 Of 3</div>
     </div>
   </div>
 

@@ -22,27 +22,21 @@ $usuario = new User($nome,$senha,$email,$data_de_nascimento,$cpf,$sexo,$funcao);
 $inseriu = "";
 if($funcao === "Vocalista"){
     $inseriu = DbFunc::criar_usuario('cantor',$usuario,$conexao);
-    criar_sessao($inseriu);
 }else if($funcao === "Musico"){
-    echo "$funcao";
     $inseriu = DbFunc::criar_usuario('musico',$usuario,$conexao);
-    criar_sessao($inseriu_mus);
-    
 }
 
 
-
-function criar_sessao($inseriu){
-    if ($inseriu) {
-        echo "Cadastro Realizado com Sucesso";
-        $_SESSION['email'] = $email;
-        $_SESSION['senha'] = $senha;
-        echo "<script>alert('Cadastro realizado com sucesso')</script>";
-        setcookie('login', $email);
-        mysqli_close($conexao);
-        header("Location:home.php");
-    }
+if ($inseriu) {
+    echo "Cadastro Realizado com Sucesso";
+    $_SESSION['email'] = $email;
+    $_SESSION['senha'] = $senha;
+    echo "<script>alert('Cadastro realizado com sucesso')</script>";
+    setcookie('login', $email);
+    mysqli_close($conexao);
+    header("Location:home.php");
 }
+
 
 
 ?>
