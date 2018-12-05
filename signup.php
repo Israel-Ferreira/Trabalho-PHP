@@ -28,13 +28,12 @@ if($funcao === "Vocalista"){
 
 
 if ($inseriu) {
-    echo "Cadastro Realizado com Sucesso";
     $_SESSION['email'] = $email;
     $_SESSION['senha'] = $senha;
-    echo "<script>alert('Cadastro realizado com sucesso')</script>";
     setcookie('login', $email);
-    mysqli_close($conexao);
     header("Location:home.php");
+}else{
+    echo "<h1>Tem Mutreta</h1>";
 }
 
 
