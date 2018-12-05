@@ -5,9 +5,14 @@
 * [Node.js](https://nodejs.org/en/)
 * [PHP 7 e o XAMPP]()
 
-## clonando o repositório
+## Clonando o repositório
+
+Abra o cmd e mude para o diretório onde está o xampp
+
+`` cd ../../xampp/htdocs ``
 
 Se você tiver git, basta digitar no seu terminal,o comando git clone
+
 
 `` git clone https://github.com/Israel-Ferreira/Trabalho-PHP.git ``
 
