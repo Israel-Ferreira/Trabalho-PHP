@@ -25,10 +25,12 @@
   if(mysqli_num_rows($resultado_mus) > 0){
     $resultado_mus = mysqli_fetch_array($resultado_mus);
     $tabela = "musico";
+    $nome = $resultado_mus['user_nome'];
     $cpf = $resultado_mus['user_CPF'];
   }else if(mysqli_num_rows($resultado_sing) > 0){
     $resultado_sing = mysqli_fetch_array($resultado_sing);
     $tabela = "cantor";
+    $nome = $resultado_sing['user_nome'];
     $cpf = $resultado_sing['user_CPF'];
   }
 
@@ -68,7 +70,8 @@
     <div class="row">
       <div class="col-md-6 col-xs-12">
         <div class="container jumbotron ">
-          <h4 class="text-center container-title"><?php echo $email; ?></h3>
+          <h3 class="text-center container-title"><?php echo $email; ?></h3>
+          <p><?php echo $nome; ?></p>
           <hr class="my-4">
           <div class="buttons">
             <a href="alterar_usuario.php?cpf=<?php echo $cpf; ?>&funcao=<?php echo $tabela ?>" class="btn btn-primary btn-lg">Alterar</a>

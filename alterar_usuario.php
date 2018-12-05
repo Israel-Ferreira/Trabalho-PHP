@@ -19,6 +19,7 @@
 
     $reslt = DbFunc::informacoes_cpf($conexao, $tabela, $cpf);
 
+
     $dados = mysqli_fetch_array($reslt);
 
     ?>
@@ -53,23 +54,27 @@
             </div>   
         </nav>
     </header>
-    <div class="container">
+    <div class="container form-container">
         <h2>Dados Pessoais</h2>
-        <form action="signup.php" name="formsign" method="POST" id="signUpForm">
+        <form action="alterar.php" name="formsign" method="POST" id="updateForm">
             <div class="form-group">
-                <label for="signUpCPF">CPF: </label>
-                <input type="text" id="signUpCPF" class="form-control" name="cpf" placeholder="CPF" value="<?php echo $cpf; ?>" readonly>
+                <label for="signUpPassword">Email: </label>
+                <input type="text" class="form-control" name="cpf" id="updateEmail" placeholder="Funcao" value="<?php echo $cpf ?>" readonly>
+            </div>
+            <div class="form-group">
+                <label for="signUpPassword">Funcao: </label>
+                <input type="text" class="form-control" name="funcao" id="updateEmail" placeholder="Funcao" value="<?php echo $tabela; ?>" readonly>
             </div>
             <div class="form-group">
                 <label for="signUpName">Nome: </label>
-                <input type="text" name="nome" class="form-control" id="signUpName" name="nome" placeholder="Digite o seu nome aqui">
+                <input type="text" name="user_nome" class="form-control" id="updateName" placeholder="Digite o seu nome aqui" value="<?php echo $dados['user_nome'];?>" required>
             </div>
             <div class="form-group">
-                <label for="signUpPassword">Senha: </label>
-                <input type="password" class="form-control" name="senha" id="signUpPassword" placeholder="Senha">
+                <label for="updatePassword">Senha: </label>
+                <input type="text" class="form-control" name="senha" id="updatePassword" placeholder="Senha" value="<?php echo $dados['senha']; ?>" required>
             </div>
-            <a href="home.php" class="btn btn-danger" data-dismiss="modal">Cancelar</a>
-            <button type="submit" id="signup-button" class="btn btn-success">Criar Conta</button>
+            <a href="home.php" class="btn btn-danger">Cancelar</a>
+            <button type="submit" id="signup-button" class="btn btn-success">Atualizar</button>
         </form>
     </div>
 </body>
