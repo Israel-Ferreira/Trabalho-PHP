@@ -66,12 +66,14 @@
   </header>
   <div class="container">
     <div class="row">
-      <div class="col-md-12 col-xs-12">
+      <div class="col-md-6 col-xs-12">
         <div class="container jumbotron ">
-          <h3 class="text-center"><?php echo $email; ?></h3>
-          <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+          <h4 class="text-center container-title"><?php echo $email; ?></h3>
           <hr class="my-4">
-          <a class="btn btn-primary btn-lg" href="alterar_usuario.php?cpf=<?php echo $cpf; ?>&funcao=<?php  echo $tabela; ?>" role="button">Alterar</a>
+          <div class="buttons">
+            <a href="alterar_usuario.php?cpf=<?php echo $cpf; ?>&funcao=<?php echo $tabela ?>" class="btn btn-primary btn-lg">Alterar</a>
+            <a href="#" class="btn btn-primary btn-lg">Melhorar o perfil</a>
+          </div>
         </div>
       </div>
     </div>

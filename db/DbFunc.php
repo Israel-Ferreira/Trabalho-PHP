@@ -31,6 +31,11 @@ class DbFunc {
         return mysqli_query($conn,$query);
     }
 
+    public static function update_usuario($conn,$tabela,$cpf,$nome,$senha,$telefone){
+        $query = "UPDATE $tabela SET `user_nome`='$nome', `senha`='$senha', `telefone`='$telefone' WHERE 'user_CPF'='$cpf'";
+        return mysqli_query($conn,$query);
+    }
+
 }
 
 ?>

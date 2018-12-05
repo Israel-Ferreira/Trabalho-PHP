@@ -56,7 +56,11 @@ main {
 
 
 .jumbotron{
-  margin: 10px auto;
+  margin: 8px auto;
+}
+
+.form-container{
+  margin-top: 28px;
 }
 
 
