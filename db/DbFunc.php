@@ -12,7 +12,7 @@ class DbFunc {
     }
 
     public static function criar_usuario($tabela,$usuario,$conn){
-        $query = "INSERT INTO $tabela (`user_nome`,`user_Email`,`user_CPF`,`senha`,`user_sexo`,`user_Data_Nasc`,`estilo_musical`) VALUES ('$usuario->nome','$usuario->email','$usuario->cpf','$usuario->senha','$usuario->sexo','$usuario->data_de_nascimento','$usuario->funcao')";
+        $query = "INSERT INTO $tabela (user_nome,user_Email,user_CPF,senha,user_sexo,user_Data_Nasc,estilo_musical) VALUES ('$usuario->nome','$usuario->email','$usuario->cpf','$usuario->senha','$usuario->sexo','$usuario->data_de_nascimento','$usuario->funcao')";
         return mysqli_query($conn,$query);
     }
 

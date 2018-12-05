@@ -79,6 +79,15 @@
           </div>
         </div>
       </div>
+      <div class="col-md-6 col-xs-12">
+        <div class="container jumbotron ">
+          <h3 class="text-center container-title"><?php echo $email; ?></h3>
+          <p><?php echo $cpf; ?></p>
+          <hr class="my-4">
+        </div>
+      </div>
+
+      
     </div>
   </div>
 
