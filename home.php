@@ -71,7 +71,7 @@
       <div class="col-md-6 col-xs-12">
         <div class="container jumbotron ">
           <h3 class="text-center container-title"><?php echo $email; ?></h3>
-          <p><?php echo $nome; ?></p>
+          <p class="text-center"><?php echo $nome; ?></p>
           <hr class="my-4">
           <div class="buttons">
             <a href="alterar_usuario.php?cpf=<?php echo $cpf; ?>&funcao=<?php echo $tabela ?>" class="btn btn-primary btn-lg">Alterar</a>
@@ -82,8 +82,11 @@
       <div class="col-md-6 col-xs-12">
         <div class="container jumbotron ">
           <h3 class="text-center container-title"><?php echo $email; ?></h3>
-          <p><?php echo $cpf; ?></p>
+          <p class="text-center"><?php echo $cpf; ?></p>
           <hr class="my-4">
+          <div class="buttons">
+            <a href="remover.php?cpf=<?php echo $cpf; ?>&tabela=<?php echo $tabela; ?>" class="btn btn-danger btn-lg">Remover Conta</a>
+          </div>
         </div>
       </div>
 

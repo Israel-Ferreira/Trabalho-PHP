@@ -19,8 +19,6 @@ if(verifica_campo("nome") && verifica_campo("senha")){
 
 
 
-
-
 $atualizou = DbFunc::update_usuario($conexao,$tabela,$cpf,$nome,$senha);
 
 if($atualizou){

@@ -17,7 +17,7 @@ class DbFunc {
     }
 
     public static function deletar_usuario($conn,$tabela,$cpf){
-        $query  = "DELETE FROM $tabela WHERE cpf=$cpf";
+        $query  = "DELETE FROM $tabela WHERE user_CPF='$cpf'";
         return mysqli_query($conn,$query);
     }
 
