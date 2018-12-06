@@ -86,6 +86,7 @@
           <hr class="my-4">
           <div class="buttons">
             <a href="remover.php?cpf=<?php echo $cpf; ?>&tabela=<?php echo $tabela; ?>" class="btn btn-danger btn-lg">Remover Conta</a>
+            <a href="teste.php?" class="btn btn-success btn-lg">Ver Estatísticas</a>
           </div>
         </div>
       </div>

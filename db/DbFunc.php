@@ -36,6 +36,11 @@ class DbFunc {
         return mysqli_query($conn,$query);
     }
 
+    public static function grafico_dados($conn,$tabela){
+        $query = "SELECT user_sexo, COUNT(*) AS 'total' FROM $tabela";
+        return mysqli_query($conn,$query);
+    }
+
 }
 
 ?>
